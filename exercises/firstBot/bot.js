@@ -9,4 +9,9 @@ bot.start(ctx => {
     ctx.reply(`Fala ae ${from.first_name}`)
 })
 
+bot.on('text', async (ctx, next) => {
+    await ctx.reply('Mid 1')
+    next()
+})
+
 bot.startPolling()
