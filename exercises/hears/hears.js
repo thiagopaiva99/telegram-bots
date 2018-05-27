@@ -9,3 +9,5 @@ bot.hears('pizza', ctx => {
 
     ctx.reply(`${user.first_name}, você falou pizza? QUERO!`)
 })
+
+bot.startPolling()
