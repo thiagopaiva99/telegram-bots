@@ -9,3 +9,5 @@ bot.start(ctx => {
 })
 
 const getUser = ctx => ctx.update.message.from
+
+bot.startPolling()
