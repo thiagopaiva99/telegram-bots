@@ -4,7 +4,7 @@ const bot = new Telegraf(env.token)
 const utils = require('../utils.js')
 const moment = require('moment')
 
-bot.hears('pizza', ctx => {
+bot.hears(/pizza/i, ctx => {
     const user = utils.getUser(ctx)
 
     ctx.reply(`${user.first_name}, você falou pizza? QUERO!`)
