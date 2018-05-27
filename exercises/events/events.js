@@ -9,6 +9,8 @@ bot.start(ctx => {
     ctx.reply(`Seja bem-vindo ${user.first_name}`)
 })
 
-
+bot.on('text', ctx => {
+    ctx.reply(`Texto '${ctx.update.message.text}' recebido!`)
+})
 
 bot.startPolling()
