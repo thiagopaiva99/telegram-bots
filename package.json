@@ -10,6 +10,7 @@
   "author": "“Thiago <thiagopaiva9@gmail.com> (https://github.com/thiagopaiva99)",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "telegraf": "^3.17.3"
   }
 }
