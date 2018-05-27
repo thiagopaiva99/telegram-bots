@@ -14,12 +14,12 @@ bot.on('text', ctx => {
 })
 
 bot.on('location', ctx => {
-    const location = ctx.update.message.location
-    console.log(location)
+    const { latitude, longitude } = ctx.update.message.location
+
     ctx.reply(`
         Opa! Entendi! Vocêe está em:
-        Lat: ${location.latitude},
-        Lon: ${location.longitude}
+        Lat: ${latitude},
+        Lon: ${longitude}
     `)
 })
 
