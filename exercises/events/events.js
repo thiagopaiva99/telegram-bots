@@ -23,4 +23,10 @@ bot.on('location', ctx => {
     `)
 })
 
+bot.on('contact', ctx => {
+    const contact = ctx.update.message.contact
+    console.log(contact)
+    ctx.reply(`Feito! Recebi o contato '${contact.first_name}'`)
+})
+
 bot.startPolling()
