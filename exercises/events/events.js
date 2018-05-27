@@ -29,4 +29,10 @@ bot.on('contact', ctx => {
     ctx.reply(`Feito! Recebi o contato '${contact.first_name}'`)
 })
 
+bot.on('voice', ctx => {
+    const voice = ctx.update.message.voice
+    console.log(voice)
+    ctx.reply(`Audio recebido, ele possui ${voice.duration} segundos`)
+})
+
 bot.startPolling()
