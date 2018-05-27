@@ -35,4 +35,13 @@ bot.on('voice', ctx => {
     ctx.reply(`Audio recebido, ele possui ${voice.duration} segundos`)
 })
 
+bot.on('photo', ctx => {
+    const photos = ctx.update.message.photo
+    console.log(photos)
+    
+    photos.forEach((photo, index) => 
+        ctx.reply(`Photo ${index} tem resolução de ${photo.width}x${photo.height}`)
+    )
+})
+
 bot.startPolling()
