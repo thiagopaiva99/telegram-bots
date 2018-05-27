@@ -7,3 +7,5 @@ bot.start(async ctx => {
     const user = utils.getUser(ctx)
     await ctx.reply(`Seja bem vindo ${user.first_name}!`)
 })
+
+bot.startPolling()
