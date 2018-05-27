@@ -44,4 +44,10 @@ bot.on('photo', ctx => {
     )
 })
 
+bot.on('sticker', ctx => {
+    const sticker = ctx.update.message.sticker
+    console.log(sticker)
+    ctx.reply(`Estou vendo que você enviou o sticker ${sticker.emoji} do conjunto ${sticker.set_name}`)
+})
+
 bot.startPolling()
