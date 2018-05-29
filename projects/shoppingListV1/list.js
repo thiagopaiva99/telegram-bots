@@ -3,7 +3,7 @@ const Telegraf = require('telegraf')
 const Extra = require('telegraf/extre')
 const Markup = require('telegraf/markup')
 const bot = new Telegraf(env.token)
-const utils = require('../utils.js')
+const utils = require('../../exercises/utils')
 
 let list = []
 
@@ -15,3 +15,10 @@ const buttons = () => Extra.markup(
         }
     )
 )
+
+bot.start(async ctx => {
+    const user = utils.getUser(ctx)
+
+    await ctx.reply(`Seja bem-vindo ${user.first_name}`)
+    await ctx.reply(`Digite os itens que você deseja adicionar...`)
+})
