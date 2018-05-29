@@ -29,3 +29,5 @@ bot.on('text', ctx => {
     list.push(item)
     ctx.reply(`${item} adicionado!`, buttons())
 })
+
+bot.startPolling()
