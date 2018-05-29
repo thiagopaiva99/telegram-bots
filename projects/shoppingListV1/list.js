@@ -1,6 +1,6 @@
 const env = require('../../.env')
 const Telegraf = require('telegraf')
-const Extra = require('telegraf/extre')
+const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
 const bot = new Telegraf(env.token)
 const utils = require('../../exercises/utils')
@@ -28,6 +28,13 @@ bot.on('text', ctx => {
 
     list.push(item)
     ctx.reply(`${item} adicionado!`, buttons())
+})
+
+bot.action(/delete (.+)/, ctx => {
+    const item = ctx.match[1]
+
+    list = list.filter(listItem => listItem !== item)
+    ctx.reply(`${item} deletado!`, buttons())
 })
 
 bot.startPolling()
