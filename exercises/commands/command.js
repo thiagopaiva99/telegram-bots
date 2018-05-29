@@ -9,4 +9,8 @@ bot.start(ctx => {
     ctx.reply(`Seja bem vindo ${user.first_name}, avise se precisar de /ajuda`)
 })
 
+bot.command('ajuda', ctx => {
+    ctx.reply(`Eu sou o comando de ajuda!`)
+})
+
 bot.startPolling()
