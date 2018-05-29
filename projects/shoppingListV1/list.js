@@ -22,3 +22,10 @@ bot.start(async ctx => {
     await ctx.reply(`Seja bem-vindo ${user.first_name}`)
     await ctx.reply(`Digite os itens que você deseja adicionar...`)
 })
+
+bot.on('text', ctx => {
+    const item = ctx.update.message.text
+
+    list.push(item)
+    ctx.reply(`${item} adicionado!`, buttons())
+})
