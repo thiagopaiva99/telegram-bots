@@ -47,7 +47,7 @@ bot.on('text', checkUser, processing, ctx => {
     ctx.reply(`${item} adicionado!`, buttons())
 })
 
-bot.action(/delete (.+)/, ctx => {
+bot.action(/delete (.+)/, checkUser, ctx => {
     const item = ctx.match[1]
 
     list = list.filter(listItem => listItem !== item)
