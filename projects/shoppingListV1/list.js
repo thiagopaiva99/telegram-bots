@@ -5,8 +5,6 @@ const Markup = require('telegraf/markup')
 const bot = new Telegraf(env.token)
 const utils = require('../../exercises/utils')
 
-let list = []
-
 const buttons = () => Extra.markup(
     Markup.inlineKeyboard(
         list.map(item => Markup.callbackButton(item, `delete ${item}`)),
@@ -15,6 +13,8 @@ const buttons = () => Extra.markup(
         }
     )
 )
+
+bot.use(session())
 
 bot.start(async ctx => {
     const user = utils.getUser(ctx)
