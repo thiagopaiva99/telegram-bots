@@ -22,6 +22,15 @@ const checkUser = (ctx, next) => {
 
     const sameIdCallback = ctx.update.callback_query 
         && ctx.update.callback_query.from.id === env.userId
+
+    sameIdMsg || sameIdCallback 
+        ? next()
+        : ctx.reply('Desculpe, não fui autorizado a conversar com você!')
+}
+
+const processing = ({ reply }, next) => {
+    reply('Processando...')
+        .then(() => next())
 }
 
 bot.start(async ctx => {
