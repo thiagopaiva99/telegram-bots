@@ -40,7 +40,7 @@ bot.start(checkUser, async ctx => {
     await ctx.reply(`Digite os itens que você deseja adicionar...`)
 })
 
-bot.on('text', ctx => {
+bot.on('text', checkUser, processing, ctx => {
     const item = ctx.update.message.text
 
     list.push(item)
