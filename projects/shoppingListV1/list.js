@@ -21,19 +21,21 @@ bot.start(async ctx => {
 
     await ctx.reply(`Seja bem-vindo ${user.first_name}`)
     await ctx.reply(`Digite os itens que você deseja adicionar...`)
+    
+    ctx.session.list = []
 })
 
 bot.on('text', ctx => {
     const item = ctx.update.message.text
 
-    list.push(item)
+    ctx.session.list.push(item)
     ctx.reply(`${item} adicionado!`, buttons())
 })
 
 bot.action(/delete (.+)/, ctx => {
     const item = ctx.match[1]
 
-    list = list.filter(listItem => listItem !== item)
+    ctx.session.list = ctx.session.list.filter(listItem => listItem !== item)
     ctx.reply(`${item} deletado!`, buttons())
 })
 
