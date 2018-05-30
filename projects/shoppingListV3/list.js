@@ -33,7 +33,7 @@ const processing = ({ reply }, next) => {
         .then(() => next())
 }
 
-bot.start(async ctx => {
+bot.start(checkUser, async ctx => {
     const user = utils.getUser(ctx)
 
     await ctx.reply(`Seja bem-vindo ${user.first_name}`)
